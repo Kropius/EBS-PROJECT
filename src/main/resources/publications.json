@@ -1,0 +1,182 @@
+[
+  {
+    "stationId": 46,
+    "city": "TIMISOARA",
+    "temperature": 1,
+    "rainChance": 0.647278961394673,
+    "windSpeed": 95,
+    "windDirection": "NE",
+    "date": "2021-02-09"
+  },
+  {
+    "stationId": 83,
+    "city": "ROMAN",
+    "temperature": 1,
+    "rainChance": 0.26179991176570816,
+    "windSpeed": 38,
+    "windDirection": "W",
+    "date": "2021-02-16"
+  },
+  {
+    "stationId": 6,
+    "city": "ROMAN",
+    "temperature": 3,
+    "rainChance": 0.7314175291543765,
+    "windSpeed": 140,
+    "windDirection": "NW",
+    "date": "2021-01-03"
+  },
+  {
+    "stationId": 89,
+    "city": "CONSTANTA",
+    "temperature": -2,
+    "rainChance": 0.38332451842007675,
+    "windSpeed": 110,
+    "windDirection": "N",
+    "date": "2021-03-02"
+  },
+  {
+    "stationId": 37,
+    "city": "CURTEA DE ARGES",
+    "temperature": 1,
+    "rainChance": 0.5350893675678945,
+    "windSpeed": 15,
+    "windDirection": "NW",
+    "date": "2021-01-02"
+  },
+  {
+    "stationId": 8,
+    "city": "BICAZ",
+    "temperature": 0,
+    "rainChance": 0.6461386951855351,
+    "windSpeed": 125,
+    "windDirection": "N",
+    "date": "2021-01-14"
+  },
+  {
+    "stationId": 83,
+    "city": "VASLUI",
+    "temperature": 3,
+    "rainChance": 0.6507963696311068,
+    "windSpeed": 35,
+    "windDirection": "NE",
+    "date": "2021-02-02"
+  },
+  {
+    "stationId": 88,
+    "city": "CONSTANTA",
+    "temperature": -1,
+    "rainChance": 0.3352640309624515,
+    "windSpeed": 47,
+    "windDirection": "SW",
+    "date": "2021-03-05"
+  },
+  {
+    "stationId": 1,
+    "city": "BUCURESTI",
+    "temperature": 2,
+    "rainChance": 0.4015951514407804,
+    "windSpeed": 29,
+    "windDirection": "N",
+    "date": "2021-01-27"
+  },
+  {
+    "stationId": 20,
+    "city": "PIATRA NEAMT",
+    "temperature": -1,
+    "rainChance": 0.7097850709758123,
+    "windSpeed": 199,
+    "windDirection": "W",
+    "date": "2021-02-02"
+  },
+  {
+    "stationId": 36,
+    "city": "PIATRA NEAMT",
+    "temperature": -2,
+    "rainChance": 0.6127667410907166,
+    "windSpeed": 78,
+    "windDirection": "N",
+    "date": "2021-01-17"
+  },
+  {
+    "stationId": 28,
+    "city": "TIMISOARA",
+    "temperature": -3,
+    "rainChance": 0.12854507153615247,
+    "windSpeed": 81,
+    "windDirection": "E",
+    "date": "2021-02-06"
+  },
+  {
+    "stationId": 86,
+    "city": "CLUJ-NAPOCA",
+    "temperature": 2,
+    "rainChance": 0.9937733388968164,
+    "windSpeed": 79,
+    "windDirection": "NW",
+    "date": "2021-01-10"
+  },
+  {
+    "stationId": 29,
+    "city": "PASCANI",
+    "temperature": -2,
+    "rainChance": 0.7117439898953403,
+    "windSpeed": 55,
+    "windDirection": "S",
+    "date": "2021-02-20"
+  },
+  {
+    "stationId": 76,
+    "city": "SATU MARE",
+    "temperature": -3,
+    "rainChance": 0.4231840167163775,
+    "windSpeed": 167,
+    "windDirection": "NE",
+    "date": "2021-02-01"
+  },
+  {
+    "stationId": 80,
+    "city": "GALATI",
+    "temperature": 3,
+    "rainChance": 0.47355827637072423,
+    "windSpeed": 4,
+    "windDirection": "W",
+    "date": "2021-01-06"
+  },
+  {
+    "stationId": 99,
+    "city": "SUCEAVA",
+    "temperature": 3,
+    "rainChance": 0.5220615766567801,
+    "windSpeed": 13,
+    "windDirection": "S",
+    "date": "2021-02-24"
+  },
+  {
+    "stationId": 19,
+    "city": "IASI",
+    "temperature": -3,
+    "rainChance": 0.13770204675792352,
+    "windSpeed": 113,
+    "windDirection": "NW",
+    "date": "2021-01-24"
+  },
+  {
+    "stationId": 17,
+    "city": "VASLUI",
+    "temperature": 0,
+    "rainChance": 0.14128808430034934,
+    "windSpeed": 135,
+    "windDirection": "SE",
+    "date": "2021-01-27"
+  },
+  {
+    "stationId": 44,
+    "city": "PASCANI",
+    "temperature": -1,
+    "rainChance": 0.43816098726737074,
+    "windSpeed": 153,
+    "windDirection": "NW",
+    "date": "2021-01-07"
+  }
+]
