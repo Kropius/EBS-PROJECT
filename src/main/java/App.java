@@ -1,22 +1,28 @@
-
 import brokers.Broker;
 import org.apache.storm.Config;
 import org.apache.storm.LocalCluster;
 import org.apache.storm.generated.StormTopology;
 import org.apache.storm.topology.TopologyBuilder;
 import publishers.Publisher;
+import subscriber.Subscriber;
 
 public class App {
     private static final String SPOUT_ID = "source_text_spout";
     private static final String BROKER_ID = "broker_bolt";
+    private static final String BROKER_ID2 = "broker_bolt2";
+    private static final String SUBSCRIBER_ID = "subscriber_bolt";
 
     public static void main(String[] args) throws Exception {
         TopologyBuilder builder = new TopologyBuilder();
         Publisher spout = new Publisher();
-        Broker splitbolt = new Broker();
+        Broker broker = new Broker();
+        Subscriber subscriber = new Subscriber();
 
         builder.setSpout(SPOUT_ID, spout);
-        builder.setBolt(BROKER_ID, splitbolt).shuffleGrouping(SPOUT_ID);
+        builder.setBolt(BROKER_ID, broker).shuffleGrouping(SPOUT_ID).shuffleGrouping(SUBSCRIBER_ID);
+//        builder.setBolt(BROKER_ID2, broker).shuffleGrouping(BROKER_ID);
+
+        builder.setBolt(SUBSCRIBER_ID, subscriber).shuffleGrouping(BROKER_ID);
 
         LocalCluster cluster = new LocalCluster();
         StormTopology topology = builder.createTopology();
@@ -42,7 +48,7 @@ public class App {
         Config config = new Config();
         config.put(Config.TOPOLOGY_EXECUTOR_RECEIVE_BUFFER_SIZE, 1024);
         config.put(Config.TOPOLOGY_DISRUPTOR_BATCH_SIZE, 1);
-        config.put("publications","publications.json");
+        config.put("publications", "publications.json");
         return config;
 
     }

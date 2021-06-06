@@ -1,10 +1,5 @@
 package publishers;
 
-import java.io.InputStream;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.storm.spout.SpoutOutputCollector;
 import org.apache.storm.task.TopologyContext;
@@ -13,6 +8,11 @@ import org.apache.storm.topology.base.BaseRichSpout;
 import org.apache.storm.tuple.Fields;
 import org.apache.storm.tuple.Values;
 import publishers.model.Publication;
+
+import java.io.InputStream;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class Publisher extends BaseRichSpout {
 

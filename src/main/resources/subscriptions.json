@@ -1,0 +1,53 @@
+{
+  "subscriptions": [
+    {
+      "constraints": [
+        {
+          "key": "stationId",
+          "operator": "<=",
+          "value": "82"
+        },
+        {
+          "key": "city",
+          "operator": "=",
+          "value": "PODU ILOAIE"
+        },
+        {
+          "key": "temperature",
+          "operator": "<=",
+          "value": "3"
+        },
+        {
+          "key": "wind_direction",
+          "operator": "=",
+          "value": "NE"
+        }
+      ]
+    },
+    {
+      "constraints": [
+        {
+          "key": "stationId",
+          "operator": "<=",
+          "value": "82"
+        },
+        {
+          "key": "city",
+          "operator": "=",
+          "value": "PODU ILOAIE"
+        },
+        {
+          "key": "temperature",
+          "operator": "<=",
+          "value": "3"
+        },
+        {
+          "key": "wind_direction",
+          "operator": "=",
+          "value": "NE"
+        }
+      ]
+    }
+  ]
+}
+
