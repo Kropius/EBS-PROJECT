@@ -9,8 +9,8 @@ import subscriber.Subscriber;
 public class App {
     private static final String SPOUT_ID = "source_text_spout";
     private static final String BROKER_ID = "broker_bolt";
-    private static final String BROKER_ID2 = "broker_bolt2";
     private static final String SUBSCRIBER_ID = "subscriber_bolt";
+    private static final String SUBSCRIBER_ID2 = "subscriber_bolt2";
 
     public static void main(String[] args) throws Exception {
         TopologyBuilder builder = new TopologyBuilder();
@@ -19,10 +19,10 @@ public class App {
         Subscriber subscriber = new Subscriber();
 
         builder.setSpout(SPOUT_ID, spout);
-        builder.setBolt(BROKER_ID, broker).shuffleGrouping(SPOUT_ID).shuffleGrouping(SUBSCRIBER_ID);
-//        builder.setBolt(BROKER_ID2, broker).shuffleGrouping(BROKER_ID);
+        builder.setBolt(BROKER_ID, broker).shuffleGrouping(SPOUT_ID).shuffleGrouping(SUBSCRIBER_ID).shuffleGrouping(SUBSCRIBER_ID2);
 
-        builder.setBolt(SUBSCRIBER_ID, subscriber).shuffleGrouping(BROKER_ID);
+        builder.setBolt(SUBSCRIBER_ID, subscriber).directGrouping(BROKER_ID,"result");
+        builder.setBolt(SUBSCRIBER_ID2, subscriber).directGrouping(BROKER_ID,"result");
 
         LocalCluster cluster = new LocalCluster();
         StormTopology topology = builder.createTopology();

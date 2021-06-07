@@ -22,7 +22,6 @@ public class Subscriber extends BaseRichBolt {
     public void prepare(Map map, TopologyContext topologyContext, OutputCollector outputCollector) {
         collector = outputCollector;
         init("subscriptions.json");
-        System.out.println(subscriptionContainer.getSubscriptions().get(0).getConstraints().get(0).getKey());
         collector.emit(new Values(subscriptionContainer.getSubscriptions().get(0)));
     }
 
@@ -39,7 +38,6 @@ public class Subscriber extends BaseRichBolt {
 
     private void init(String sourceFile) {
         System.out.println(String.format("Received filename: %s", sourceFile));
-        Thread.currentThread().getContextClassLoader().getResourceAsStream(sourceFile);
 
         try (InputStream in = Thread.currentThread().getContextClassLoader().getResourceAsStream(sourceFile)) {
             ObjectMapper mapper = new ObjectMapper();

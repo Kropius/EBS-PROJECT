@@ -12,36 +12,42 @@ import subscriber.model.Subscription;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.LinkedHashMap;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class Broker extends BaseRichBolt {
 
     private OutputCollector collector;
     private List<Publication> publications;
-    private List<Subscription> subscriptions;
+    private Map<Integer,List<Subscription>> taskAndSubscription;
 
     public void prepare(Map stormConf, TopologyContext context, OutputCollector collector) {
         this.collector = collector;
         this.publications = new LinkedList<>();
+        this.taskAndSubscription = new HashMap<>();
     }
 
     public void execute(Tuple input) {
+
         Publication receivedPublication = managePublication(input);
-        publications.add(receivedPublication);
-        collector.emit(new Values(receivedPublication));
+
+        if(receivedPublication != null){
+            publications.add(receivedPublication);
+        }
 
         Subscription receivedSubscription = manageSubscriptions(input);
+
         if (receivedSubscription != null) {
-            System.out.println(receivedSubscription.getConstraints());
-            subscriptions.add(receivedSubscription);
+            System.out.println(input.getSourceTask());
+            taskAndSubscription.putIfAbsent(input.getSourceTask(),new ArrayList<>());
+            taskAndSubscription.get(input.getSourceTask()).add(receivedSubscription);
+            collector.emitDirect(input.getSourceTask(),"result",new Values(publications.get(0)));
         }
     }
 
     public void declareOutputFields(OutputFieldsDeclarer declarer) {
-        declarer.declare(new Fields("PUBLICATION"));
+//        declarer.declare(new Fields("PUBLICATION"));
+        declarer.declareStream("result", true, new Fields("PUBLICATION"));
+
     }
 
     private Publication createPublication(LinkedHashMap tuple) {
